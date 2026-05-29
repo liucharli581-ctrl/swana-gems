@@ -115,15 +115,27 @@ export default function HeroCarousel() {
                     {slide.pretitle}
                   </p>
                 )}
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white leading-tight mb-5">
-                  {slide.title}
-                  {slide.titleItalic && (
-                    <>
-                      <br />
-                      <span className="italic">{slide.titleItalic}</span>
-                    </>
-                  )}
-                </h1>
+                {index === 0 ? (
+                  <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white leading-tight mb-5">
+                    {slide.title}
+                    {slide.titleItalic && (
+                      <>
+                        <br />
+                        <span className="italic">{slide.titleItalic}</span>
+                      </>
+                    )}
+                  </h1>
+                ) : (
+                  <div className="font-serif text-4xl md:text-5xl lg:text-7xl text-white leading-tight mb-5">
+                    {slide.title}
+                    {slide.titleItalic && (
+                      <>
+                        <br />
+                        <span className="italic">{slide.titleItalic}</span>
+                      </>
+                    )}
+                  </div>
+                )}
                 <p className="text-white/70 text-base leading-relaxed mb-8 max-w-md">
                   {slide.description}
                 </p>

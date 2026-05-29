@@ -1,6 +1,8 @@
 export const siteConfig = {
   name: "Swana Gems",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.swanagems.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL
+    ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
+    ?? "https://www.swanagems.com",
   description:
     "Shop Swana Gems for fine jewelry, personalized gifts, necklaces, earrings, bracelets, rings, and everyday pieces with secure checkout and reliable shipping.",
   keywords: [
