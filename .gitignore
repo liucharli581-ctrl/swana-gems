@@ -9,7 +9,9 @@ out/
 build/
 dist/
 
-# Environment
+# Env
+.env.local
+.env*.localironment
 .env
 .env.local
 .env.development.local
