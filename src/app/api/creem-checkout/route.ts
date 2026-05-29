@@ -24,10 +24,11 @@ export async function POST(request: Request) {
     const origin = request.headers.get("origin") || "http://localhost:3000";
 
     // Creem API: create checkout session
+    const isTestKey = CREEM_API_KEY?.startsWith("creem_test");
     const response = await fetch(
-      process.env.NODE_ENV === "production"
-        ? "https://api.creem.io/v1/checkouts"
-        : "https://test-api.creem.io/v1/checkouts",
+      isTestKey
+        ? "https://test-api.creem.io/v1/checkouts"
+        : "https://api.creem.io/v1/checkouts",
       {
         method: "POST",
         headers: {
