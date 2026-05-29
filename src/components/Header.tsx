@@ -103,14 +103,23 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Mobile overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/30 z-40"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white">
+        <div className="lg:hidden border-t border-gray-100 bg-white relative z-50">
           <div className="px-4 py-4 space-y-4">
             {topNavLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
                 className="block text-sm tracking-wide text-[#3c3c3c] py-2 uppercase"
               >
                 {link.label}
@@ -123,6 +132,7 @@ export default function Header() {
                   <Link
                     key={cat.href}
                     href={cat.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="text-sm text-[#3c3c3c] py-1.5"
                   >
                     {cat.name}
