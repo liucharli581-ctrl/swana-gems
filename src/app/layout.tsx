@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   applicationName: siteConfig.name,
+  verification: {
+    google: "2yHqGa8H2YoAUihDzqiy-9jcDK6oMHLaOWsMXbjxjKU",
+  },
   icons: {
     icon: [
       { url: "/seo/favicon-32x32.png", sizes: "32x32", type: "image/png" },
