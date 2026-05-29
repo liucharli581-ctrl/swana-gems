@@ -92,25 +92,25 @@ function sampleReviews(productName: string): Review[] {
 const customerPhotoPool: CustomerPhoto[] = [
   {
     id: "cp1",
-    image: "/images/products/customer-photo-1.jpg",
+    image: "/images/products/customer-photo-1.webp",
     alt: "Customer wearing jewelry in natural outdoor setting",
     author: "Sarah M.",
   },
   {
     id: "cp2",
-    image: "/images/products/customer-photo-2.jpg",
+    image: "/images/products/customer-photo-2.webp",
     alt: "Customer styling jewelry with casual outfit",
     author: "Jessica T.",
   },
   {
     id: "cp3",
-    image: "/images/products/customer-photo-3.jpg",
+    image: "/images/products/customer-photo-3.webp",
     alt: "Customer wearing piece at home",
     author: "Amanda K.",
   },
   {
     id: "cp4",
-    image: "/images/products/customer-photo-4.jpg",
+    image: "/images/products/customer-photo-4.webp",
     alt: "Customer accessorizing for evening look",
     author: "Rachel L.",
   },

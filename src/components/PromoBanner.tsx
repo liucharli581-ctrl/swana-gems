@@ -4,13 +4,13 @@ const promoCards = [
   {
     title: "Best Sellers",
     subtitle: "Our Most-Loved Pieces",
-    image: "/images/promo/bestsellers.jpg",
+    image: "/images/promo/bestsellers.webp",
     href: "/best-sellers",
   },
   {
     title: "New Arrivals",
     subtitle: "Fresh Designs for the Season",
-    image: "/images/promo/new-arrivals.png",
+    image: "/images/promo/new-arrivals.webp",
     href: "/new-arrivals",
   },
 ];
