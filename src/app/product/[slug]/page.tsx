@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   return {
     title: product.name,
-    description: `${product.description} ${product.price}. Shop ${product.category.toLowerCase()} from Swana Gems with secure checkout and reliable shipping.`,
+    description: `${product.description} ${product.price}. Shop ${product.category.toLowerCase()} from Swana Gems.`,
     alternates: { canonical: product.href },
     openGraph: {
       type: "website",
