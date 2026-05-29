@@ -32,6 +32,13 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   applicationName: siteConfig.name,
+  icons: {
+    icon: [
+      { url: "/seo/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/seo/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/seo/app-icon-192.png",
+  },
   alternates: {
     canonical: "/",
   },
