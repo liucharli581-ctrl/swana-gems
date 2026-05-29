@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 
 interface HeroSlide {
@@ -44,6 +44,7 @@ const slides: HeroSlide[] = [
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
+  const touchRef = useRef<{ startX: number }>({ startX: 0 });
 
   const goTo = useCallback((index: number) => {
     setCurrent(index);
@@ -57,13 +58,28 @@ export default function HeroCarousel() {
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   }, []);
 
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchRef.current.startX = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    const diff = touchRef.current.startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? goNext() : goPrev();
+    }
+  }, [goNext, goPrev]);
+
   useEffect(() => {
     const timer = setInterval(goNext, 6000);
     return () => clearInterval(timer);
   }, [goNext]);
 
   return (
-    <section className="relative w-full h-[80vh] lg:h-screen overflow-hidden bg-[#0a0a0a]">
+    <section
+      className="relative w-full h-[80vh] lg:h-screen overflow-hidden bg-[#0a0a0a]"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {slides.map((slide, index) => (
         <div
           key={index}

@@ -38,6 +38,7 @@ export default function ProductFilter({
 }: ProductFilterProps) {
   const [selectedPriceRanges, setSelectedPriceRanges] = useState<number[]>([]);
   const [sortBy, setSortBy] = useState("featured");
+  const [showFilters, setShowFilters] = useState(false);
 
   const togglePriceRange = (index: number) => {
     setSelectedPriceRanges((prev) =>
@@ -84,10 +85,21 @@ export default function ProductFilter({
 
   return (
     <div>
+      {/* Mobile filter toggle */}
+      <button
+        onClick={() => setShowFilters(!showFilters)}
+        className="flex lg:hidden items-center gap-2 text-xs tracking-[0.1em] uppercase text-[#0a0a0a] mb-4 py-2 px-3 border border-[#d4cfc8] w-fit"
+      >
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+        </svg>
+        {showFilters ? "Hide Filters" : "Show Filters"}
+      </button>
+
       {/* Filter bar */}
       <div className="flex flex-col lg:flex-row lg:items-start gap-6 mb-8">
-        {/* Sidebar filters */}
-        <div className="lg:w-56 flex-shrink-0 space-y-6">
+        {/* Sidebar filters - collapsible on mobile */}
+        <div className={`lg:w-56 flex-shrink-0 space-y-6 ${showFilters ? "block" : "hidden lg:block"}`}>
           {/* Category */}
           <div>
             <h3 className="text-xs tracking-[0.15em] uppercase text-[#0a0a0a] font-medium mb-3">

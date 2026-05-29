@@ -68,7 +68,7 @@ export default function ProductCard({ product }: { product: Product }) {
           className={`absolute top-3 right-3 w-8 h-8 flex items-center justify-center transition-all hover:scale-110 ${
             wishlisted
               ? "bg-white text-[#d83105]"
-              : "bg-white/80 text-[#3c3c3c] opacity-0 group-hover/card:opacity-100"
+              : "bg-white/80 text-[#3c3c3c] lg:opacity-0 lg:group-hover/card:opacity-100 opacity-100"
           }`}
           aria-label={wishlisted ? "Remove from wishlist" : "Add to wishlist"}
         >

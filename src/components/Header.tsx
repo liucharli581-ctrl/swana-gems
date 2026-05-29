@@ -29,7 +29,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 -ml-2"
+            className="lg:hidden p-2.5 -ml-2.5"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
           >
@@ -63,14 +63,14 @@ export default function Header() {
           </nav>
 
           {/* Icons */}
-          <div className="flex items-center gap-4">
-            <Link href="/search" className="hidden sm:block p-2" aria-label="Search">
+          <div className="flex items-center gap-1">
+            <Link href="/search" className="hidden sm:block p-2.5" aria-label="Search">
               <SearchIcon />
             </Link>
-            <Link href="/account/login" className="hidden sm:block p-2" aria-label="Account">
+            <Link href="/account/login" className="hidden sm:block p-2.5" aria-label="Account">
               <AccountIcon />
             </Link>
-            <Link href="/wishlist" className="hidden sm:block p-2 relative" aria-label="Wishlist">
+            <Link href="/wishlist" className="hidden sm:block p-2.5 relative" aria-label="Wishlist">
               <HeartIcon />
               {wishlistCount > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 bg-[#d83105] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
@@ -78,7 +78,7 @@ export default function Header() {
                 </span>
               )}
             </Link>
-            <Link href="/cart" className="p-2 relative" aria-label="Cart">
+            <Link href="/cart" className="p-2.5 relative" aria-label="Cart">
               <CartIcon />
               {cartCount > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 bg-[#f1e02b] text-[#0a0a0a] text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
