@@ -6,7 +6,7 @@ import { HeartIcon } from "@/components/icons";
 import { useWishlist } from "@/lib/wishlist-context";
 import type { Product } from "@/types";
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({ product, priority }: { product: Product; priority?: boolean }) {
   const hasHover = !!product.hoverImage;
   const { isWishlisted, addItem, removeItem } = useWishlist();
   const wishlisted = isWishlisted(product.id);
@@ -40,6 +40,7 @@ export default function ProductCard({ product }: { product: Product }) {
             src={product.image}
             alt={product.name}
             fill
+            priority={priority}
             sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, 50vw"
             className="object-contain object-center p-2 transition-transform duration-700 group-hover/card:scale-105"
           />

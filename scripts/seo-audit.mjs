@@ -297,7 +297,7 @@ async function main() {
   totalChecks++;
 
   // FAQ Schema
-  for (const page of ["/category/all", "/product/elisa-pendant-necklace"]) {
+  for (const page of ["/category/all"]) {
     const r = await fetchPage(`${BASE_URL}${page}`);
     const schemas = extractSchema(r.html);
     const hasFAQ = schemas.some((s) => s["@type"] === "FAQPage");

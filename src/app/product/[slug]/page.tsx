@@ -22,7 +22,9 @@ export async function generateMetadata({
 
   return {
     title: product.name,
-    description: `${product.description} ${product.price}. Shop ${product.category.toLowerCase()} from Swana Gems.`,
+    description: product.description.length > 155
+      ? `${product.description.slice(0, 152)}...`
+      : product.description,
     alternates: { canonical: product.href },
     openGraph: {
       type: "website",

@@ -11,7 +11,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "swana-gems-redefining-everyday-elegance",
-    title: "Swana Gems: Redefining Everyday Elegance for a New Generation",
+    title: "Swana Gems: Redefining Everyday Elegance",
     excerpt: "How we are striking a rare balance between heirloom quality and everyday accessibility.",
     content: `
       At Swana Gems, we believe jewelry should be more than an occasional indulgence — it should be a part of your everyday story. Our approach to demi-fine jewelry bridges the gap between luxury craftsmanship and everyday wearability.
